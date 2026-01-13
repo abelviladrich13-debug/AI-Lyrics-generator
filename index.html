@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Lyrics Generator</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
-        header, footer { background: #333; color: #fff; text-align:center; padding:20px 0; }
-        nav { background: #444; text-align:center; padding:10px 0; }
-        nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-        main { padding:20px; max-width:900px; margin:0 auto; }
-        section { margin-bottom:40px; }
-        .ad-space { background:#eee; text-align:center; padding:20px; margin:20px 0; color:#555; }
-        input[type="text"], textarea { width:100%; padding:10px; margin-bottom:10px; }
-        button { padding:10px 20px; background:#333; color:#fff; border:none; cursor:pointer; }
-        button:hover { background:#555; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Lyrics Generator Profesional</title>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height:1.6; background:#f9f9f9; color:#333; }
+    header, footer { background: #1a1a1a; color: #fff; text-align:center; padding:30px 0; }
+    nav { background: #272727; text-align:center; padding:15px 0; }
+    nav a { color:#fff; margin:0 20px; text-decoration:none; font-weight:600; transition:0.3s; }
+    nav a:hover { color:#ff9900; }
+    main { padding:40px 20px; max-width:1000px; margin:0 auto; }
+    section { margin-bottom:60px; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+    .ad-space { background:#eee; text-align:center; padding:20px; margin:30px 0; color:#555; border-radius:5px; }
+    input[type="text"], select, textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
+    button { padding:12px 25px; background:#1a1a1a; color:#fff; border:none; cursor:pointer; border-radius:5px; font-size:1rem; transition:0.3s; }
+    button:hover { background:#ff9900; }
+    #lyrics { margin-top:25px; white-space:pre-line; background:#f0f0f0; padding:20px; border-radius:5px; }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>AI Lyrics Generator</h1>
-    <p>Genera letras de canciones automáticamente con nuestra IA</p>
+    <h1>AI Lyrics Generator Profesional</h1>
+    <p>Genera letras largas y únicas según el estilo que elijas</p>
 </header>
 
 <nav>
@@ -36,16 +38,22 @@
 
 <section id="home">
     <h2>Bienvenido a AI Lyrics Generator</h2>
-    <p>Nuestra inteligencia artificial te ayuda a crear letras de canciones únicas en segundos. Ideal para músicos y compositores que buscan inspiración rápida.</p>
+    <p>Crea letras largas y originales en segundos. Elige un estilo musical y un tema, ¡y deja que la IA haga la magia!</p>
     <div class="ad-space">[Espacio para anuncio AdSense]</div>
 </section>
 
 <section id="generator">
     <h2>Generador de Letras</h2>
-    <p>Escribe un tema o estilo de canción y nuestra IA generará una letra para ti:</p>
-    <input type="text" id="topic" placeholder="Ej: Amor, Hip-Hop, Fiesta...">
-    <button onclick="generateLyrics()">Generar</button>
-    <div id="lyrics" style="margin-top:20px; white-space:pre-line;"></div>
+    <p>Selecciona un estilo y escribe un tema para generar tu letra:</p>
+    <select id="style">
+        <option value="Pop">Pop</option>
+        <option value="Rap">Rap</option>
+        <option value="Balada">Balada</option>
+        <option value="Fiesta">Fiesta</option>
+    </select>
+    <input type="text" id="topic" placeholder="Ej: Amor, Amistad, Fiesta..." >
+    <button onclick="generateLyrics()">Generar Letra</button>
+    <div id="lyrics"></div>
     <div class="ad-space">[Espacio para anuncio AdSense]</div>
 </section>
 
@@ -53,18 +61,18 @@
     <h2>Blog de AI y Música</h2>
     <article>
         <h3>Cómo generar letras de canciones con IA</h3>
-        <p>La IA puede ayudarte a crear letras originales de manera rápida. Solo elige un tema y deja que la inteligencia artificial haga su magia. Esto es perfecto para inspiración y práctica musical.</p>
+        <p>La IA puede ayudarte a crear letras originales de manera rápida. Solo elige un tema y un estilo musical y deja que la inteligencia artificial haga su magia.</p>
     </article>
     <article>
         <h3>Consejos para mejorar tus letras generadas por IA</h3>
-        <p>Aunque la IA puede dar ideas iniciales, siempre revisa y adapta el contenido para que sea único y tenga tu estilo personal.</p>
+        <p>Siempre revisa y adapta el contenido para que sea único y tenga tu estilo personal. Mezcla frases, añade metáforas y juega con el ritmo.</p>
     </article>
     <div class="ad-space">[Espacio para anuncio AdSense]</div>
 </section>
 
 <section id="about">
     <h2>Sobre Nosotros</h2>
-    <p>AI Lyrics Generator es una herramienta creada para ayudar a compositores y músicos a generar letras originales de manera rápida y sencilla. Nuestro objetivo es inspirarte y potenciar tu creatividad.</p>
+    <p>AI Lyrics Generator es una herramienta creada para inspirar a compositores y músicos, ayudándolos a crear letras originales de manera rápida y profesional.</p>
 </section>
 
 <section id="contact">
@@ -90,17 +98,92 @@
 
 <script>
 function generateLyrics() {
-    const topic = document.getElementById("topic").value;
+    const topic = document.getElementById("topic").value.trim();
+    const style = document.getElementById("style").value;
     if(!topic) { alert("Por favor escribe un tema"); return; }
-    // Ejemplo básico de IA simulado
-    const lyrics = `Aquí está tu letra sobre "${topic}":\n\n` +
-                   `Verso 1: La vida de ${topic} me inspira hoy,\n` +
-                   `Coro: Siento ${topic} en mi corazón,\n` +
-                   `Verso 2: Cada momento con ${topic} es canción.`;
+
+    const frases = {
+        Pop: [
+            `Bajo las luces de la ciudad, ${topic} me hace soñar.`,
+            `Cada latido me recuerda a ${topic}, quiero volar.`,
+            `Riendo y bailando, ${topic} nos hace cantar.`,
+            `En tus ojos veo ${topic}, no puedo escapar.`,
+            `Cada momento contigo, ${topic} es canción.`,
+            `${topic} brilla en la noche y me da emoción.`,
+            `Siento que ${topic} me lleva a otro lugar.`,
+            `Con ${topic} a mi lado todo puede pasar.`
+        ],
+        Rap: [
+            `En el barrio la vida es dura, ${topic} me da cordura.`,
+            `Rimas rápidas sobre ${topic}, sin censura.`,
+            `Mis palabras fluyen con ${topic}, pura estructura.`,
+            `Cada línea que suelto lleva el sello de ${topic}.`,
+            `Sobre beats duros, ${topic} no tiene rival.`,
+            `Mi voz grita ${topic} en cada instrumental.`,
+            `Entre calles y luces, ${topic} es mi señal.`,
+            `Con ${topic} en mi mente, siempre voy a triunfar.`
+        ],
+        Balada: [
+            `En silencio susurra ${topic} en mi corazón.`,
+            `Cada lágrima recuerda a ${topic}, sin razón.`,
+            `La brisa trae ecos de ${topic}, pura emoción.`,
+            `No puedo dejar de pensar en ${topic}, mi canción.`,
+            `Suspiro y pienso en ${topic}, eterno amor.`,
+            `El tiempo no borra ${topic}, sigue en mi interior.`,
+            `Cada noche sueño con ${topic}, sin final.`,
+            `${topic} es la melodía que me hace volar.`
+        ],
+        Fiesta: [
+            `Luces y ritmo, ${topic} nos hace vibrar.`,
+            `Bailando sin parar, ${topic} en el lugar.`,
+            `Música que envuelve, ${topic} va a estallar.`,
+            `Esta noche es nuestra, ${topic} sin final.`,
+            `Con cada canción, ${topic} nos hace saltar.`,
+            `La pista arde, ${topic} nos hace volar.`,
+            `Entre amigos y risas, ${topic} es la pasión.`,
+            `Siente el ritmo de ${topic}, pura diversión.`
+        ]
+    };
+
+    const shuffle = arr => arr.sort(() => Math.random() - 0.5);
+
+    const selected = shuffle(frases[style]).slice(0, 5); // 5 versos
+
+    const puente = shuffle(frases[style]).slice(0, 2).join(' ');
+
+    const coro = `
+Coro:
+${topic} en mi corazón, cada momento es canción,
+Con ${topic} a mi lado, siento la inspiración.
+    `;
+
+    const lyrics = `
+Aquí está tu letra sobre "${topic}" estilo ${style}:
+
+Verso 1:
+${selected[0]}
+
+Verso 2:
+${selected[1]}
+
+Verso 3:
+${selected[2]}
+
+Verso 4:
+${selected[3]}
+
+Verso 5:
+${selected[4]}
+
+Puente:
+${puente}
+
+${coro}
+    `;
+
     document.getElementById("lyrics").innerText = lyrics;
 }
 </script>
 
 </body>
-
 </html>
