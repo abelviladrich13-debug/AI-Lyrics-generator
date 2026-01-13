@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lyrics Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
+        header, footer { background: #333; color: #fff; text-align:center; padding:20px 0; }
+        nav { background: #444; text-align:center; padding:10px 0; }
+        nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
+        main { padding:20px; max-width:900px; margin:0 auto; }
+        section { margin-bottom:40px; }
+        .ad-space { background:#eee; text-align:center; padding:20px; margin:20px 0; color:#555; }
+        input[type="text"], textarea { width:100%; padding:10px; margin-bottom:10px; }
+        button { padding:10px 20px; background:#333; color:#fff; border:none; cursor:pointer; }
+        button:hover { background:#555; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AI Lyrics Generator</h1>
+    <p>Genera letras de canciones automáticamente con nuestra IA</p>
+</header>
+
+<nav>
+    <a href="#home">Inicio</a>
+    <a href="#generator">Generador</a>
+    <a href="#blog">Blog</a>
+    <a href="#about">Sobre Nosotros</a>
+    <a href="#contact">Contacto</a>
+</nav>
+
+<main>
+
+<section id="home">
+    <h2>Bienvenido a AI Lyrics Generator</h2>
+    <p>Nuestra inteligencia artificial te ayuda a crear letras de canciones únicas en segundos. Ideal para músicos y compositores que buscan inspiración rápida.</p>
+    <div class="ad-space">[Espacio para anuncio AdSense]</div>
+</section>
+
+<section id="generator">
+    <h2>Generador de Letras</h2>
+    <p>Escribe un tema o estilo de canción y nuestra IA generará una letra para ti:</p>
+    <input type="text" id="topic" placeholder="Ej: Amor, Hip-Hop, Fiesta...">
+    <button onclick="generateLyrics()">Generar</button>
+    <div id="lyrics" style="margin-top:20px; white-space:pre-line;"></div>
+    <div class="ad-space">[Espacio para anuncio AdSense]</div>
+</section>
+
+<section id="blog">
+    <h2>Blog de AI y Música</h2>
+    <article>
+        <h3>Cómo generar letras de canciones con IA</h3>
+        <p>La IA puede ayudarte a crear letras originales de manera rápida. Solo elige un tema y deja que la inteligencia artificial haga su magia. Esto es perfecto para inspiración y práctica musical.</p>
+    </article>
+    <article>
+        <h3>Consejos para mejorar tus letras generadas por IA</h3>
+        <p>Aunque la IA puede dar ideas iniciales, siempre revisa y adapta el contenido para que sea único y tenga tu estilo personal.</p>
+    </article>
+    <div class="ad-space">[Espacio para anuncio AdSense]</div>
+</section>
+
+<section id="about">
+    <h2>Sobre Nosotros</h2>
+    <p>AI Lyrics Generator es una herramienta creada para ayudar a compositores y músicos a generar letras originales de manera rápida y sencilla. Nuestro objetivo es inspirarte y potenciar tu creatividad.</p>
+</section>
+
+<section id="contact">
+    <h2>Contacto</h2>
+    <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="text" placeholder="Tu correo" required>
+        <textarea placeholder="Mensaje..." rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<section id="policies">
+    <h2>Política de Privacidad</h2>
+    <p>Esta web cumple con las políticas de privacidad y cookies necesarias para Google AdSense.</p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 AI Lyrics Generator | Todos los derechos reservados</p>
+</footer>
+
+<script>
+function generateLyrics() {
+    const topic = document.getElementById("topic").value;
+    if(!topic) { alert("Por favor escribe un tema"); return; }
+    // Ejemplo básico de IA simulado
+    const lyrics = `Aquí está tu letra sobre "${topic}":\n\n` +
+                   `Verso 1: La vida de ${topic} me inspira hoy,\n` +
+                   `Coro: Siento ${topic} en mi corazón,\n` +
+                   `Verso 2: Cada momento con ${topic} es canción.`;
+    document.getElementById("lyrics").innerText = lyrics;
+}
+</script>
+
+</body>
+</html>
