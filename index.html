@@ -3,27 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Lyrics Generator Profesional</title>
+<title>AI Lyrics Generator Pro - Multi Géneros</title>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; line-height:1.6; background:#f9f9f9; color:#333; }
-    header, footer { background: #1a1a1a; color: #fff; text-align:center; padding:30px 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; background:#f4f4f4; color:#222; }
+    header, footer { background: #1a1a1a; color: #fff; text-align:center; padding:40px 20px; }
     nav { background: #272727; text-align:center; padding:15px 0; }
-    nav a { color:#fff; margin:0 20px; text-decoration:none; font-weight:600; transition:0.3s; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:600; transition:0.3s; }
     nav a:hover { color:#ff9900; }
-    main { padding:40px 20px; max-width:1000px; margin:0 auto; }
-    section { margin-bottom:60px; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-    .ad-space { background:#eee; text-align:center; padding:20px; margin:30px 0; color:#555; border-radius:5px; }
-    input[type="text"], select, textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
-    button { padding:12px 25px; background:#1a1a1a; color:#fff; border:none; cursor:pointer; border-radius:5px; font-size:1rem; transition:0.3s; }
-    button:hover { background:#ff9900; }
-    #lyrics { margin-top:25px; white-space:pre-line; background:#f0f0f0; padding:20px; border-radius:5px; }
+    main { padding:50px 20px; max-width:1200px; margin:0 auto; }
+    section { margin-bottom:60px; background:#fff; padding:40px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); }
+    .ad-space { background:#eee; text-align:center; padding:25px; margin:35px 0; color:#555; border-radius:6px; }
+    input[type="text"], select, textarea { width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; border-radius:6px; font-size:1rem; transition:0.3s; }
+    input[type="text"]:focus, select:focus, textarea:focus { border-color:#ff9900; outline:none; }
+    button { padding:15px 30px; background:#1a1a1a; color:#fff; border:none; cursor:pointer; border-radius:6px; font-size:1rem; transition:0.3s; }
+    button:hover { background:#ff9900; transform:scale(1.05); }
+    #lyrics { margin-top:30px; white-space:pre-line; background:#f0f0f0; padding:25px; border-radius:8px; font-size:1.05rem; line-height:1.6; }
+    h1, h2 { color:#1a1a1a; }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>AI Lyrics Generator Profesional</h1>
-    <p>Genera letras largas y únicas según el estilo que elijas</p>
+    <h1>AI Lyrics Generator Pro</h1>
+    <p>Genera letras largas y únicas según el estilo musical que elijas</p>
 </header>
 
 <nav>
@@ -37,7 +43,7 @@
 <main>
 
 <section id="home">
-    <h2>Bienvenido a AI Lyrics Generator</h2>
+    <h2>Bienvenido a AI Lyrics Generator Pro</h2>
     <p>Crea letras largas y originales en segundos. Elige un estilo musical y un tema, ¡y deja que la IA haga la magia!</p>
     <div class="ad-space">[Espacio para anuncio AdSense]</div>
 </section>
@@ -50,6 +56,10 @@
         <option value="Rap">Rap</option>
         <option value="Balada">Balada</option>
         <option value="Fiesta">Fiesta</option>
+        <option value="Rock">Rock</option>
+        <option value="Reggaeton">Reggaetón</option>
+        <option value="Electrónica">Electrónica</option>
+        <option value="Jazz">Jazz</option>
     </select>
     <input type="text" id="topic" placeholder="Ej: Amor, Amistad, Fiesta..." >
     <button onclick="generateLyrics()">Generar Letra</button>
@@ -104,58 +114,109 @@ function generateLyrics() {
 
     const frases = {
         Pop: [
-            `Bajo las luces de la ciudad, ${topic} me hace soñar.`,
-            `Cada latido me recuerda a ${topic}, quiero volar.`,
-            `Riendo y bailando, ${topic} nos hace cantar.`,
-            `En tus ojos veo ${topic}, no puedo escapar.`,
-            `Cada momento contigo, ${topic} es canción.`,
-            `${topic} brilla en la noche y me da emoción.`,
-            `Siento que ${topic} me lleva a otro lugar.`,
-            `Con ${topic} a mi lado todo puede pasar.`
+            "Bajo las luces de la ciudad, {topic} me hace soñar.",
+            "Cada latido me recuerda a {topic}, quiero volar.",
+            "Riendo y bailando, {topic} nos hace cantar.",
+            "En tus ojos veo {topic}, no puedo escapar.",
+            "Cada momento contigo, {topic} es canción.",
+            "{topic} brilla en la noche y me da emoción.",
+            "Siento que {topic} me lleva a otro lugar.",
+            "Con {topic} a mi lado todo puede pasar.",
+            "Entre notas y risas, {topic} va a quedar.",
+            "El ritmo y {topic} me hacen vibrar."
         ],
         Rap: [
-            `En el barrio la vida es dura, ${topic} me da cordura.`,
-            `Rimas rápidas sobre ${topic}, sin censura.`,
-            `Mis palabras fluyen con ${topic}, pura estructura.`,
-            `Cada línea que suelto lleva el sello de ${topic}.`,
-            `Sobre beats duros, ${topic} no tiene rival.`,
-            `Mi voz grita ${topic} en cada instrumental.`,
-            `Entre calles y luces, ${topic} es mi señal.`,
-            `Con ${topic} en mi mente, siempre voy a triunfar.`
+            "En el barrio la vida es dura, {topic} me da cordura.",
+            "Rimas rápidas sobre {topic}, sin censura.",
+            "Mis palabras fluyen con {topic}, pura estructura.",
+            "Cada línea que suelto lleva el sello de {topic}.",
+            "Sobre beats duros, {topic} no tiene rival.",
+            "Mi voz grita {topic} en cada instrumental.",
+            "Entre calles y luces, {topic} es mi señal.",
+            "Con {topic} en mi mente, siempre voy a triunfar.",
+            "El ritmo y {topic} me inspiran a luchar.",
+            "Rap y {topic} unidos, nada nos puede parar."
         ],
         Balada: [
-            `En silencio susurra ${topic} en mi corazón.`,
-            `Cada lágrima recuerda a ${topic}, sin razón.`,
-            `La brisa trae ecos de ${topic}, pura emoción.`,
-            `No puedo dejar de pensar en ${topic}, mi canción.`,
-            `Suspiro y pienso en ${topic}, eterno amor.`,
-            `El tiempo no borra ${topic}, sigue en mi interior.`,
-            `Cada noche sueño con ${topic}, sin final.`,
-            `${topic} es la melodía que me hace volar.`
+            "En silencio susurra {topic} en mi corazón.",
+            "Cada lágrima recuerda a {topic}, sin razón.",
+            "La brisa trae ecos de {topic}, pura emoción.",
+            "No puedo dejar de pensar en {topic}, mi canción.",
+            "Suspiro y pienso en {topic}, eterno amor.",
+            "El tiempo no borra {topic}, sigue en mi interior.",
+            "Cada noche sueño con {topic}, sin final.",
+            "{topic} es la melodía que me hace volar.",
+            "Mi alma canta por {topic}, cada despertar.",
+            "En cada acorde encuentro a {topic}, mi verdad."
         ],
         Fiesta: [
-            `Luces y ritmo, ${topic} nos hace vibrar.`,
-            `Bailando sin parar, ${topic} en el lugar.`,
-            `Música que envuelve, ${topic} va a estallar.`,
-            `Esta noche es nuestra, ${topic} sin final.`,
-            `Con cada canción, ${topic} nos hace saltar.`,
-            `La pista arde, ${topic} nos hace volar.`,
-            `Entre amigos y risas, ${topic} es la pasión.`,
-            `Siente el ritmo de ${topic}, pura diversión.`
+            "Luces y ritmo, {topic} nos hace vibrar.",
+            "Bailando sin parar, {topic} en el lugar.",
+            "Música que envuelve, {topic} va a estallar.",
+            "Esta noche es nuestra, {topic} sin final.",
+            "Con cada canción, {topic} nos hace saltar.",
+            "La pista arde, {topic} nos hace volar.",
+            "Entre amigos y risas, {topic} es la pasión.",
+            "Siente el ritmo de {topic}, pura diversión.",
+            "{topic} en cada paso, toda la habitación.",
+            "Vibrando con {topic}, noche de emoción."
+        ],
+        Rock: [
+            "Guitarras rugen, {topic} me hace gritar.",
+            "Bajo y batería, {topic} va a reventar.",
+            "Entre riffs y luces, {topic} se siente real.",
+            "Mi corazón late al ritmo de {topic} sin parar.",
+            "Entre humo y fuego, {topic} brilla sin final.",
+            "Cuerdas y voz, {topic} nos va a guiar.",
+            "El escenario vibra con {topic} total.",
+            "Rock y {topic}, combinación mortal.",
+            "Gritando con fuerza, {topic} es mi señal.",
+            "Con {topic} en el alma, nada me puede parar."
+        ],
+        Reggaeton: [
+            "Baila pegado, {topic} nos hace mover.",
+            "El ritmo de reggaetón y {topic} nos va a envolver.",
+            "Luz y calor, {topic} hace vibrar.",
+            "En la pista juntos, {topic} va a reinar.",
+            "Sensual y caliente, {topic} nos hace soñar.",
+            "Con cada beat, {topic} empieza a sonar.",
+            "Siente la música, {topic} nos va a guiar.",
+            "Moviendo caderas, {topic} sin parar.",
+            "Reggaetón y {topic}, noche de pasión.",
+            "El DJ sube, {topic} en acción."
+        ],
+        Electronica: [
+            "Luces láser y {topic} me hacen volar.",
+            "Cada drop recuerda a {topic}, sin parar.",
+            "Bajo pulsante y {topic} va a estallar.",
+            "Entre sintetizadores, {topic} brilla más.",
+            "Vibrando al ritmo, {topic} me hace soñar.",
+            "Con beats futuristas, {topic} va a sonar.",
+            "Electrónica y {topic}, pura emoción.",
+            "La pista arde con {topic}, sensación total.",
+            "Ondas de sonido, {topic} nos hace vibrar.",
+            "Entre luces y humo, {topic} va a quedar."
+        ],
+        Jazz: [
+            "Saxo y piano, {topic} suena genial.",
+            "Entre acordes suaves, {topic} es especial.",
+            "Ritmo y swing, {topic} me hace volar.",
+            "Improvisando con {topic}, todo puede pasar.",
+            "Cada nota recuerda a {topic}, sin final.",
+            "Bajo y batería, {topic} nos va a guiar.",
+            "Entre humo y luces, {topic} va a sonar.",
+            "Jazz y {topic} unidos, pura pasión.",
+            "Mi alma canta con {topic}, sensación total.",
+            "El ritmo suave de {topic} me hace soñar."
         ]
     };
 
     const shuffle = arr => arr.sort(() => Math.random() - 0.5);
-
-    const selected = shuffle(frases[style]).slice(0, 5); // 5 versos
-
-    const puente = shuffle(frases[style]).slice(0, 2).join(' ');
-
-    const coro = `
-Coro:
-${topic} en mi corazón, cada momento es canción,
-Con ${topic} a mi lado, siento la inspiración.
-    `;
+    const selected = shuffle(frases[style].map(f => f.replace("{topic}", topic))).slice(0, 10); // 10 versos
+    const puente = shuffle(frases[style].map(f => f.replace("{topic}", topic))).slice(0, 3).join(' ');
+    const coro1 = `${topic} en mi corazón, cada momento es canción, Con ${topic} a mi lado, siento la inspiración.`;
+    const coro2 = `${topic} me guía, me hace volar, cada verso que escribo te va a nombrar.`;
+    const coro3 = `Con ${topic} en mi alma, nada me puede parar, cada palabra es un reflejo de tu vibrar.`;
 
     const lyrics = `
 Aquí está tu letra sobre "${topic}" estilo ${style}:
@@ -175,10 +236,32 @@ ${selected[3]}
 Verso 5:
 ${selected[4]}
 
+Verso 6:
+${selected[5]}
+
+Verso 7:
+${selected[6]}
+
+Verso 8:
+${selected[7]}
+
+Verso 9:
+${selected[8]}
+
+Verso 10:
+${selected[9]}
+
 Puente:
 ${puente}
 
-${coro}
+Coro 1:
+${coro1}
+
+Coro 2:
+${coro2}
+
+Coro 3:
+${coro3}
     `;
 
     document.getElementById("lyrics").innerText = lyrics;
