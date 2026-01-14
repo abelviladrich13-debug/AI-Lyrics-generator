@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AI Lyrics Generator Pro</title>
+<meta name="description" content="Generador profesional de letras de canciones con estilo actual. Pop, Trap, Reggaetón, Indie, R&B y más.">
 
-<meta name="description" content="Generador profesional de letras de canciones con IA. Pop, Trap, Reggaetón, Indie, Rap y más.">
 <link rel="icon" href="favicon.ico">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --bg:#0f0f14;
-    --card:#181822;
-    --accent:#ff9f1c;
-    --accent2:#ff3d81;
-    --text:#f5f5f5;
-    --muted:#9a9a9a;
+    --bg:#0b0d13;
+    --panel:#141826;
+    --panel2:#1b2033;
+    --accent:#ffb703;
+    --accent2:#ff4d8d;
+    --text:#f5f7ff;
+    --muted:#9aa0b5;
 }
 
 *{box-sizing:border-box}
@@ -25,114 +26,129 @@
 body{
     margin:0;
     font-family:'Inter',sans-serif;
-    background:radial-gradient(circle at top,#1b1b2a,#0f0f14);
+    background:radial-gradient(circle at top,#1c2040,#0b0d13 70%);
     color:var(--text);
 }
 
+/* HEADER */
 header{
-    padding:80px 20px;
+    padding:100px 20px 60px;
     text-align:center;
 }
-
 header h1{
-    font-size:3rem;
-    font-weight:800;
+    font-size:3.4rem;
+    font-weight:900;
     background:linear-gradient(90deg,var(--accent),var(--accent2));
     -webkit-background-clip:text;
     color:transparent;
 }
-
 header p{
-    color:var(--muted);
-    max-width:700px;
+    max-width:800px;
     margin:20px auto 0;
-    font-size:1.1rem;
+    color:var(--muted);
+    font-size:1.15rem;
 }
 
+/* NAV */
 nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(10,12,20,.75);
+    backdrop-filter:blur(14px);
     display:flex;
     justify-content:center;
-    gap:30px;
-    padding:15px;
-    background:rgba(0,0,0,.3);
-    backdrop-filter:blur(10px);
+    gap:40px;
+    padding:18px;
 }
-
 nav a{
     color:var(--text);
     text-decoration:none;
     font-weight:600;
-    opacity:.8;
+    opacity:.85;
 }
 nav a:hover{opacity:1;color:var(--accent)}
 
+/* LAYOUT */
 main{
     max-width:1200px;
     margin:auto;
-    padding:40px 20px;
+    padding:60px 20px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:50px;
 }
 
-.card{
-    background:var(--card);
-    border-radius:16px;
+/* PANELS */
+.panel{
+    background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border-radius:22px;
     padding:40px;
-    margin-bottom:50px;
-    box-shadow:0 20px 40px rgba(0,0,0,.4);
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
 }
 
 h2{
-    font-size:2rem;
+    font-size:1.9rem;
     margin-bottom:20px;
 }
 
+/* FORM */
 label{
-    display:block;
-    margin-bottom:10px;
     font-weight:600;
+    margin-bottom:8px;
+    display:block;
 }
-
-input,select,textarea{
+select,textarea{
     width:100%;
-    padding:15px;
-    border-radius:10px;
+    padding:16px;
+    margin-bottom:22px;
+    border-radius:14px;
     border:none;
-    margin-bottom:20px;
-    background:#111;
-    color:#fff;
+    background:#0e1120;
+    color:var(--text);
     font-size:1rem;
 }
-
 textarea{resize:vertical}
 
+/* BUTTON */
 button{
-    padding:16px 40px;
-    border-radius:50px;
+    width:100%;
+    padding:18px;
     border:none;
-    font-weight:700;
+    border-radius:50px;
+    font-weight:800;
+    font-size:1.05rem;
     cursor:pointer;
     background:linear-gradient(90deg,var(--accent),var(--accent2));
     color:#000;
-    font-size:1rem;
     transition:.3s;
 }
+button:hover{transform:scale(1.04)}
 
-button:hover{transform:scale(1.05)}
-
+/* LYRICS */
 #lyrics{
-    margin-top:40px;
     white-space:pre-line;
-    background:#0c0c12;
-    padding:30px;
-    border-radius:14px;
-    line-height:1.8;
+    line-height:1.9;
     font-size:1.05rem;
+    background:#0b0d18;
+    padding:40px;
+    border-radius:22px;
     border:1px solid rgba(255,255,255,.05);
 }
 
+/* FOOTER */
 footer{
     text-align:center;
-    padding:40px;
+    padding:50px;
     color:var(--muted);
+    font-size:.9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -141,7 +157,7 @@ footer{
 
 <header>
 <h1>AI Lyrics Generator Pro</h1>
-<p>Crea letras modernas, coherentes y listas para producir canciones reales.</p>
+<p>Letras modernas, coherentes y listas para convertirse en canciones reales.</p>
 </header>
 
 <nav>
@@ -153,93 +169,92 @@ footer{
 
 <main>
 
-<section class="card">
-<h2>🎧 Generador de Letras</h2>
+<div class="grid">
 
-<label>Género musical</label>
+<div class="panel">
+<h2>🎧 Generar canción</h2>
+
+<label>Género</label>
 <select id="style">
-<option>Pop</option>
-<option>Trap</option>
-<option>Reggaetón</option>
-<option>Indie</option>
-<option>R&B</option>
-<option>Drill</option>
-<option>Afrobeat</option>
-<option>Synthwave</option>
+<option>Pop Actual</option>
 <option>Sad Pop</option>
+<option>Trap</option>
+<option>Reggaetón Moderno</option>
+<option>R&B</option>
+<option>Indie / Alt</option>
+<option>Afrobeat</option>
+<option>Drill</option>
 <option>Lo-fi</option>
 </select>
 
-<label>Tema, historia o emoción</label>
-<textarea id="topic" rows="4" placeholder="Ej: una relación que terminó pero sigue doliendo, noches sin dormir, éxito desde abajo..."></textarea>
+<label>Historia, emoción o idea</label>
+<textarea id="topic" rows="6" placeholder="Ej: éxito después de tocar fondo, una relación que terminó mal, noches largas pensando en alguien..."></textarea>
 
-<button onclick="generateLyrics()">Generar canción</button>
+<button onclick="generateLyrics()">Generar letra</button>
+</div>
 
-<div id="lyrics"></div>
-</section>
+<div class="panel">
+<h2>🎵 Letra generada</h2>
+<div id="lyrics">Aquí aparecerá tu canción…</div>
+</div>
+
+</div>
 
 </main>
 
 <footer>
-© 2026 AI Lyrics Generator Pro · Inspirando música
+© 2026 AI Lyrics Generator Pro · Music First
 </footer>
 
 <script>
 function generateLyrics(){
 const topic=document.getElementById("topic").value.trim();
 const style=document.getElementById("style").value;
-if(!topic){alert("Escribe un tema o historia");return;}
+if(!topic){alert("Escribe una idea o historia");return;}
 
-const blocks={
-Pop:[
-"Luces encendidas, pero por dentro todo está en pausa,\nsonrío en fotos viejas fingiendo que no pasa nada.",
-"No sé si fue destino o solo mala sincronía,\npero tu nombre aún aparece cuando acaba el día.",
-"Dicen que el tiempo cura, pero mienten un poco,\nhay heridas que solo aprenden a hacerse en silencio."
+const db={
+"Pop Actual":[
+"No éramos perfectos, pero era real,\npor eso dolió cuando todo se fue.",
+"Aprendí a sonreír con el pecho roto,\npor fuera bien, por dentro en modo avión."
 ],
-Trap:[
-"Vengo de abajo, donde nadie apuesta,\nahora hablan de mí los que nunca me miran.",
-"Demasiadas noches frías pensando en el mañana,\naprendí a confiar solo en mí y en mi palabra.",
-"El dinero no cura vacíos,\npero compra el silencio de muchos enemigos."
+"Sad Pop":[
+"Te fuiste lento, sin hacer ruido,\ny ahora todo pesa un poco más.",
+"Hay silencios que gritan tu nombre\ncuando la noche se queda sola."
 ],
-Reggaeton:[
-"La noche está pa’ pecar lento,\ntu cuerpo hablando un idioma que no miento.",
-"Se pega cuando caminas,\ncuando te vas me dejas preso de tu rutina.",
-"No prometo nada eterno,\nsolo sudar verdades hasta que salga el sol."
+"Trap":[
+"Desde abajo aprendí a no confiar,\nahora subo solo, sin mirar atrás.",
+"No fue suerte, fue aguantar,\ncuando nadie apostaba nada."
 ],
-Indie:[
-"La ciudad duerme pero yo no,\nmis pensamientos hacen ruido.",
-"Aprendí a perderme para encontrarme,\na escribir canciones que nunca te envié."
+"Reggaetón Moderno":[
+"Nos perdimos bailando despacio,\ncomo si mañana no importara.",
+"No prometí quedarme,\nsolo que esta noche fuera real."
 ],
-RNB:[
-"Tu ausencia pesa más de noche,\ncuando el mundo baja el volumen.",
-"No era amor perfecto,\nera real, y por eso dolió."
+"R&B":[
+"Tu ausencia suena más fuerte de noche,\ncuando todo baja el volumen.",
+"No era amor perfecto,\nera honesto, y eso duele más."
 ],
-Drill:[
-"La calle no perdona errores,\naprendí a moverme sin hacer ruido.",
-"No confíes en palabras bonitas,\nconfía en acciones cuando nadie mira."
+"Indie / Alt":[
+"Guardo mensajes que nunca envié,\npor si algún día vuelves.",
+"La ciudad sigue igual,\npero yo no."
 ],
-Afrobeat:[
-"Sudor y sonrisas bajo la luna,\nla vida se siente mejor cuando vibra.",
-"Muévete lento, siente el tempo,\nhoy el problema se queda afuera."
+"Afrobeat":[
+"Muévete lento, siente el pulso,\nhoy no existen los problemas.",
+"Sonrisas sudadas bajo la luna,\nla vida vibra mejor así."
 ],
-Synthwave:[
-"Neones llorando sobre el asfalto,\nrecuerdos digitales que no se borran.",
-"Vivimos rápido,\namamos como si mañana no existiera."
+"Drill":[
+"La calle enseña sin avisar,\nsi fallas una vez no hay replay.",
+"Silencio, estrategia y paciencia,\nno todos juegan limpio."
 ],
-SadPop:[
-"Te fuiste sin cerrar la puerta,\ny ahora entra frío cada vez que recuerdo.",
-"Sonrío fuerte,\npero por dentro todo tiembla."
-],
-Lofi:[
-"Café frío, lluvia afuera,\nplaylist triste para pensar menos.",
-"No pasa nada,\npero tampoco pasa todo."
+"Lo-fi":[
+"Café frío, lluvia afuera,\npensamientos en repeat.",
+"No pasa nada,\npero todo se siente."
 ]
 };
 
-const pick=()=>blocks[style][Math.floor(Math.random()*blocks[style].length)];
+const pick=()=>db[style][Math.floor(Math.random()*db[style].length)];
 
 const song=`
-🎵 "${topic.toUpperCase()}" — ${style}
+🎧 "${topic.toUpperCase()}" — ${style}
 
 [Intro]
 ${pick()}
@@ -260,7 +275,7 @@ ${pick()}
 [Puente]
 ${pick()}
 
-[Coro Final]
+[Coro Final / Outro]
 ${pick()}
 ${pick()}
 `;
